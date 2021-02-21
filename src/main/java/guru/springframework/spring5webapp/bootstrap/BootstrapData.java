@@ -40,9 +40,11 @@ public class BootstrapData implements CommandLineRunner {
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
         ddd.setPublisher(alpina);
+        alpina.getBooks().add(ddd);
 
         authorRepository.save(eric);
         bookRepository.save(ddd);
+        publisherRepository.save(alpina);
 
         System.out.println("Books count:" + bookRepository.count());
 
